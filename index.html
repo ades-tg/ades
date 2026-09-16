@@ -22,7 +22,7 @@
         <a class="brand" href="#accueil"
           ><span class="brand-mark">A</span><span>ADES</span></a
         >
-        <button class="menu-toggle" aria-label="Ouvrir le menu">☰</button>
+        <button class="menu-toggle" type="button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="main-nav">☰</button>
         <nav id="main-nav">
           <a href="#accueil">Accueil</a><a href="#mission">Notre mission</a
           ><a href="#actions">Nos actions</a><a href="#impact">Impact</a
@@ -340,5 +340,7 @@
       </div>
     </footer>
     <script src="assets/js/main.js"></script>
-  </body>
+  
+<script>document.addEventListener("DOMContentLoaded",function(){const t=document.querySelector(".menu-toggle"),n=document.getElementById("main-nav");if(t&&n){t.addEventListener("click",function(){const o=n.classList.toggle("open");t.setAttribute("aria-expanded",String(o));t.setAttribute("aria-label",o?"Fermer le menu":"Ouvrir le menu");t.textContent=o?"×":"☰"});n.querySelectorAll("a").forEach(a=>a.addEventListener("click",function(){n.classList.remove("open");t.setAttribute("aria-expanded","false");t.setAttribute("aria-label","Ouvrir le menu");t.textContent="☰"}));window.addEventListener("resize",function(){if(innerWidth>800){n.classList.remove("open");t.setAttribute("aria-expanded","false");t.textContent="☰"}})}});</script>
+</body>
 </html>

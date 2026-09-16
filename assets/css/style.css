@@ -1108,3 +1108,24 @@ form small {
     padding: 20px 0;
   }
 }
+
+
+/* CORRECTIONS RESPONSIVE */
+html,body{width:100%;max-width:100%;overflow-x:hidden}
+img,video,iframe,svg{max-width:100%}
+@media (max-width:800px){
+.container,.section-inner{width:100%;max-width:100%;padding-left:20px;padding-right:20px}
+.site-header{z-index:1000}.nav{position:relative;padding-left:20px;padding-right:20px}
+.menu-toggle{display:grid;place-items:center;width:44px;height:44px;padding:0;color:var(--ink);cursor:pointer;border-radius:10px;line-height:1;position:relative;z-index:1002}
+.nav nav{display:none;position:absolute;top:76px;left:20px;right:20px;width:auto;margin:0;padding:12px;gap:4px;flex-direction:column;align-items:stretch;background:rgba(248,248,242,.98);border:1px solid var(--line);border-radius:0 0 16px 16px;box-shadow:0 15px 35px rgba(17,37,29,.12);backdrop-filter:blur(14px)}
+.nav nav.open{display:flex}.nav nav a{display:block;width:100%;padding:13px 14px;border-radius:10px}.nav nav .nav-cta{text-align:center;margin-top:4px}
+.hero{height:auto;min-height:720px;padding:70px 0 125px}.hero-bg{background-image:linear-gradient(180deg,rgba(250,251,247,.96) 0%,rgba(250,251,247,.84) 42%,rgba(250,251,247,.28) 72%,rgba(250,251,247,.08) 100%),url("../images/ades-reference.png");background-size:cover;background-position:center center;filter:none}
+.hero-content{width:100%;min-height:0;padding-left:20px;padding-right:20px;display:block}.hero-copy{max-width:100%;padding-top:10px}.hero h1{font-size:clamp(42px,12vw,64px);line-height:1;overflow-wrap:anywhere}.hero-copy p{max-width:100%;font-size:16px}.kicker{flex-wrap:wrap;gap:7px;font-size:11px}.kicker i{width:38px}
+.primary,.secondary{max-width:100%}.talent{left:20px;right:20px;bottom:65px;min-width:0;width:auto;padding:14px 16px;gap:12px}.talent strong{font-size:16px}.talent small{font-size:12px}
+.section{padding:65px 0}.two-col,.impact-grid,.contact-grid{width:100%;min-width:0}.section h2,.contact h2,.impact h2{max-width:100%;overflow-wrap:anywhere}.section p,.lead{max-width:100%}.cards article{width:100%;min-width:0}.section-head{min-width:0}
+.impact{min-height:650px;width:100%;padding:90px 0;background-image:url("../images/ades-impact.png");background-size:cover;background-position:center center;background-repeat:no-repeat;background-attachment:fixed;overflow:hidden;isolation:isolate}.impact::before{content:"";position:absolute;inset:0;z-index:-2;background-image:url("../images/ades-impact.png");background-size:cover;background-position:center center;background-repeat:no-repeat}.impact-overlay{z-index:-1}.impact .container{width:100%;padding-left:20px;padding-right:20px}.stats{width:100%;min-width:0}.stats div{min-width:0;gap:18px}.stats span{overflow-wrap:anywhere}
+.contact-grid{gap:35px}form{width:100%;max-width:100%;padding:22px}input,textarea,button{max-width:100%}.contact-list a,.contact-list div{flex-wrap:wrap;justify-content:flex-start}.contact-list span{overflow-wrap:anywhere}
+.footer-modern .container{padding-left:20px;padding-right:20px}.footer-main,.footer-bottom,.footer-column,.footer-about{min-width:0}.footer-bottom{flex-wrap:wrap}
+}
+@media(max-width:420px){.container,.section-inner,.hero-content,.impact .container,.footer-modern .container{padding-left:16px;padding-right:16px}.nav{padding-left:16px;padding-right:16px}.nav nav{left:16px;right:16px}.hero{min-height:680px;padding-top:55px}.hero h1{font-size:clamp(38px,12vw,52px)}.hero-actions{flex-direction:column;align-items:stretch}.primary,.secondary{width:100%}.talent{left:16px;right:16px}.news-box,form{padding:18px}}
+@media (hover:none) and (pointer:coarse){.impact{background-attachment:scroll}.impact::before{background-attachment:scroll}}
