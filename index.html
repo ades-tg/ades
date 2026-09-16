@@ -22,7 +22,15 @@
         <a class="brand" href="#accueil"
           ><span class="brand-mark">A</span><span>ADES</span></a
         >
-        <button class="menu-toggle" type="button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="main-nav">☰</button>
+        <button
+          class="menu-toggle"
+          type="button"
+          aria-label="Ouvrir le menu"
+          aria-expanded="false"
+          aria-controls="main-nav"
+        >
+          ☰
+        </button>
         <nav id="main-nav">
           <a href="#accueil">Accueil</a><a href="#mission">Notre mission</a
           ><a href="#actions">Nos actions</a><a href="#impact">Impact</a
@@ -240,15 +248,6 @@
       </section>
     </main>
 
-    <!-- <footer>
-      <div class="container footer">
-        <div class="brand">
-          <span class="brand-mark">A</span><span>ADES</span>
-        </div>
-        <p>© <span id="year"></span> ADES. Tous droits réservés.</p>
-        <div><a href="#accueil">Haut de page ↑</a></div>
-      </div>
-    </footer> -->
     <footer class="footer-modern">
       <div class="container">
         <div class="footer-main">
@@ -340,31 +339,43 @@
       </div>
     </footer>
     <script src="assets/js/main.js"></script>
-  
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-  const toggle = document.querySelector(".menu-toggle");
-  const nav = document.getElementById("main-nav");
-  if (!toggle || !nav) return;
-  toggle.addEventListener("click", function (e) {
-    e.preventDefault(); e.stopPropagation();
-    const open = nav.classList.toggle("open");
-    toggle.setAttribute("aria-expanded", open ? "true" : "false");
-    toggle.setAttribute("aria-label", open ? "Fermer le menu" : "Ouvrir le menu");
-    toggle.innerHTML = open ? "×" : "☰";
-  });
-  nav.querySelectorAll("a").forEach(function (link) {
-    link.addEventListener("click", function () {
-      nav.classList.remove("open"); toggle.setAttribute("aria-expanded", "false");
-      toggle.setAttribute("aria-label", "Ouvrir le menu"); toggle.innerHTML = "☰";
-    });
-  });
-  document.addEventListener("click", function (e) {
-    if (nav.classList.contains("open") && !nav.contains(e.target) && !toggle.contains(e.target)) {
-      nav.classList.remove("open"); toggle.setAttribute("aria-expanded", "false"); toggle.innerHTML = "☰";
-    }
-  });
-});
-</script>
-</body>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const toggle = document.querySelector(".menu-toggle");
+        const nav = document.getElementById("main-nav");
+        if (!toggle || !nav) return;
+        toggle.addEventListener("click", function (e) {
+          e.preventDefault();
+          e.stopPropagation();
+          const open = nav.classList.toggle("open");
+          toggle.setAttribute("aria-expanded", open ? "true" : "false");
+          toggle.setAttribute(
+            "aria-label",
+            open ? "Fermer le menu" : "Ouvrir le menu",
+          );
+          toggle.innerHTML = open ? "×" : "☰";
+        });
+        nav.querySelectorAll("a").forEach(function (link) {
+          link.addEventListener("click", function () {
+            nav.classList.remove("open");
+            toggle.setAttribute("aria-expanded", "false");
+            toggle.setAttribute("aria-label", "Ouvrir le menu");
+            toggle.innerHTML = "☰";
+          });
+        });
+        document.addEventListener("click", function (e) {
+          if (
+            nav.classList.contains("open") &&
+            !nav.contains(e.target) &&
+            !toggle.contains(e.target)
+          ) {
+            nav.classList.remove("open");
+            toggle.setAttribute("aria-expanded", "false");
+            toggle.innerHTML = "☰";
+          }
+        });
+      });
+    </script>
+  </body>
 </html>
