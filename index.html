@@ -341,6 +341,30 @@
     </footer>
     <script src="assets/js/main.js"></script>
   
-<script>document.addEventListener("DOMContentLoaded",function(){const t=document.querySelector(".menu-toggle"),n=document.getElementById("main-nav");if(t&&n){t.addEventListener("click",function(){const o=n.classList.toggle("open");t.setAttribute("aria-expanded",String(o));t.setAttribute("aria-label",o?"Fermer le menu":"Ouvrir le menu");t.textContent=o?"×":"☰"});n.querySelectorAll("a").forEach(a=>a.addEventListener("click",function(){n.classList.remove("open");t.setAttribute("aria-expanded","false");t.setAttribute("aria-label","Ouvrir le menu");t.textContent="☰"}));window.addEventListener("resize",function(){if(innerWidth>800){n.classList.remove("open");t.setAttribute("aria-expanded","false");t.textContent="☰"}})}});</script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const toggle = document.querySelector(".menu-toggle");
+  const nav = document.getElementById("main-nav");
+  if (!toggle || !nav) return;
+  toggle.addEventListener("click", function (e) {
+    e.preventDefault(); e.stopPropagation();
+    const open = nav.classList.toggle("open");
+    toggle.setAttribute("aria-expanded", open ? "true" : "false");
+    toggle.setAttribute("aria-label", open ? "Fermer le menu" : "Ouvrir le menu");
+    toggle.innerHTML = open ? "×" : "☰";
+  });
+  nav.querySelectorAll("a").forEach(function (link) {
+    link.addEventListener("click", function () {
+      nav.classList.remove("open"); toggle.setAttribute("aria-expanded", "false");
+      toggle.setAttribute("aria-label", "Ouvrir le menu"); toggle.innerHTML = "☰";
+    });
+  });
+  document.addEventListener("click", function (e) {
+    if (nav.classList.contains("open") && !nav.contains(e.target) && !toggle.contains(e.target)) {
+      nav.classList.remove("open"); toggle.setAttribute("aria-expanded", "false"); toggle.innerHTML = "☰";
+    }
+  });
+});
+</script>
 </body>
 </html>

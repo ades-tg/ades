@@ -1129,3 +1129,50 @@ img,video,iframe,svg{max-width:100%}
 }
 @media(max-width:420px){.container,.section-inner,.hero-content,.impact .container,.footer-modern .container{padding-left:16px;padding-right:16px}.nav{padding-left:16px;padding-right:16px}.nav nav{left:16px;right:16px}.hero{min-height:680px;padding-top:55px}.hero h1{font-size:clamp(38px,12vw,52px)}.hero-actions{flex-direction:column;align-items:stretch}.primary,.secondary{width:100%}.talent{left:16px;right:16px}.news-box,form{padding:18px}}
 @media (hover:none) and (pointer:coarse){.impact{background-attachment:scroll}.impact::before{background-attachment:scroll}}
+
+
+/* FINAL RESPONSIVE FIXES */
+@media (max-width: 800px) {
+  html, body { width:100%; max-width:100%; overflow-x:hidden; }
+  .container, .hero-content, .impact .container, .section-inner, .footer-modern .container {
+    width:100%; max-width:100%; padding-left:20px; padding-right:20px;
+  }
+  .menu-toggle { display:grid !important; place-items:center; width:44px; height:44px; padding:0; border:0; background:transparent; cursor:pointer; position:relative; z-index:10001; }
+  .nav nav, .nav nav.open {
+    position:absolute; top:76px; left:20px; right:20px; width:auto; z-index:10000;
+    flex-direction:column; align-items:stretch; gap:4px; padding:10px; margin:0;
+    background:rgba(248,248,242,.99); border:1px solid var(--line); border-radius:0 0 16px 16px;
+    box-shadow:0 18px 40px rgba(17,37,29,.18);
+  }
+  .nav nav { display:none !important; }
+  .nav nav.open { display:flex !important; }
+  .nav nav a { display:block; width:100%; padding:13px 14px; }
+
+  .hero { height:auto; min-height:720px; padding:70px 0 125px; }
+  .hero-bg {
+    background-image:linear-gradient(180deg,rgba(250,251,247,.96) 0%,rgba(250,251,247,.84) 42%,rgba(250,251,247,.28) 72%,rgba(250,251,247,.08) 100%),url("../images/ades-reference.png");
+    background-size:cover; background-position:center center; filter:none;
+  }
+
+  /* Notre vision / Impact : l'image originale reste nette et fixe. */
+  .impact {
+    background-image:url("../images/ades-impact.png") !important;
+    background-size:cover !important; background-position:center center !important;
+    background-repeat:no-repeat !important; background-attachment:fixed !important;
+    filter:none !important; transform:none !important;
+  }
+  .impact::before { display:none !important; }
+  .impact-overlay { z-index:1; }
+  .impact .container { position:relative; z-index:2; }
+
+  .two-col, .impact-grid, .contact-grid, .cards { min-width:0; }
+  .section h2, .contact h2, .impact h2, p, span { overflow-wrap:anywhere; }
+  input, textarea, button { max-width:100%; }
+  .contact-list a, .contact-list div { flex-wrap:wrap; justify-content:flex-start; }
+}
+@media (max-width:420px) {
+  .container, .hero-content, .impact .container, .section-inner, .footer-modern .container { padding-left:16px; padding-right:16px; }
+  .nav { padding-left:16px; padding-right:16px; }
+  .nav nav { left:16px; right:16px; }
+  .impact { background-attachment:fixed !important; }
+}
